@@ -6,10 +6,12 @@ import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import ProductContext from "../productContext/ProductContext";
 import { Link } from "react-router-dom";
+import CartCounter from "../CartCounter/CartCounter";
 
 const Navbar = () => {
   const [input, setInput] = useState("");
-  const { setProducts, companyProductList } = useContext(ProductContext);
+  const { setProducts, companyProductList, productCount } =
+    useContext(ProductContext);
   const handleOnclickProducts = (e) => {
     if (e.key === "Enter") {
       setProducts(
@@ -41,9 +43,14 @@ const Navbar = () => {
           </div>
           <div className="flex items-center ">
             <div className="flex items-center gap-x-2">
-              <Link to="/cart">
-                <AiOutlineShoppingCart className="text-2xl cursor-pointer sm:text-3xl" />
-              </Link>
+              <div className="flex items-center">
+                <Link to="/cart">
+                  <AiOutlineShoppingCart className="text-2xl cursor-pointer sm:text-3xl" />
+                </Link>
+                {productCount > 0 && (
+                  <CartCounter productCount={productCount} />
+                )}
+              </div>
               <AiOutlineUser className="text-2xl cursor-pointer sm:text-3xl" />
               <AiOutlineHeart className="text-2xl cursor-pointer sm:text-3xl " />
             </div>

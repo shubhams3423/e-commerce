@@ -18,7 +18,7 @@ const TopMenu = () => {
 
   return (
     <div>
-      <div className="">
+      <div className="mb-6">
         <h1 className="pl-2 mb-3">Recommended</h1>
         <div className="flex gap-x-2 pl-2  ">
           <button
