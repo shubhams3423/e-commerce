@@ -7,7 +7,37 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiOutlineUser } from "react-icons/ai";
 const Cart = () => {
-  const { cartProduct, totalAmt, discountedAmt } = useContext(ProductContext);
+  const {
+    cartProduct,
+    setCartProduct,
+    totalAmt,
+    discountedAmt,
+    SetProductCount,
+    productCount,
+    productIds,
+    setProductIds,
+    setTotalAmt,
+    setDiscountedAmt,
+    products,
+  } = useContext(ProductContext);
+  const handlerRemoveProductFromCart = (productId) => {
+    setCartProduct(
+      cartProduct.filter((product, key) => product[0]?.id !== productId)
+    );
+    SetProductCount(productCount - 1);
+    setProductIds(productIds.filter((id, key) => id !== productId));
+    setTotalAmt(
+      totalAmt -
+        products.filter((product, key) => product.id === productId)[0].newPrice
+    );
+    setDiscountedAmt(
+      discountedAmt -
+        (products.filter((product, key) => product.id === productId)[0]
+          .prevPrice -
+          products.filter((product, key) => product.id === productId)[0]
+            .newPrice)
+    );
+  };
 
   return (
     <div className="flex justify-between flex-col h-screen overflow-hidden  ">
@@ -41,21 +71,33 @@ const Cart = () => {
                     <div className="px-2">
                       <div className="flex justify-between mb-3">
                         <div className="w-20">
-                          <img src={product[0].img} alt="" />
+                          <img src={product[0]?.img} alt="" />
                         </div>
                         <div>
                           <p>{product[0].title}</p>
                         </div>
                       </div>
                       <div className="mb-2 flex justify-between">
-                        <div>
-                          <button className="px-2  bg-slate-300 rounded me-1">
-                            -
-                          </button>
-                          <span>{0}</span>
-                          <button className="px-2  bg-slate-300 rounded ms-1">
-                            +
-                          </button>
+                        <div className="flex">
+                          <div>
+                            <button className="px-2  bg-slate-300 rounded me-1">
+                              -
+                            </button>
+                            <span>{0}</span>
+                            <button className="px-2  bg-slate-300 rounded ms-1">
+                              +
+                            </button>
+                          </div>
+                          <div className="ml-4">
+                            <p
+                              className="text-gray-500 cursor-pointer"
+                              onClick={() =>
+                                handlerRemoveProductFromCart(product[0].id)
+                              }
+                            >
+                              Remove
+                            </p>
+                          </div>
                         </div>
                         <div className="flex">
                           <p className="mr-3 line-through text-slate-500">
