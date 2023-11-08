@@ -5,11 +5,12 @@ import { productObj } from "../file";
 const ProductContextProvider = ({ children }) => {
   const [products, setProducts] = useState(productObj);
   const [checkItems, setCheckedItems] = useState(["All", "All"]);
-  const [companyProductList, setCompanyProductList] = useState([{}]);
+  const [companyProductList, setCompanyProductList] = useState([]);
   const [cartProduct, setCartProduct] = useState([]);
   const [productIds, setProductIds] = useState([]);
   let [totalAmt, setTotalAmt] = useState(0);
   let [discountedAmt, setDiscountedAmt] = useState(0);
+  const [productCount, SetProductCount] = useState(0);
   return (
     <div>
       <ProductContext.Provider
@@ -28,6 +29,8 @@ const ProductContextProvider = ({ children }) => {
           setTotalAmt,
           discountedAmt,
           setDiscountedAmt,
+          productCount,
+          SetProductCount,
         }}
       >
         {children}

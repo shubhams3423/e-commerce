@@ -64,8 +64,6 @@ const Sidebar = () => {
       )
     );
   };
-  console.log("checked Items", checkItems);
-
   return (
     <div className=" flex flex-col gap-y-7  sidebar w-32 ">
       <div className="">

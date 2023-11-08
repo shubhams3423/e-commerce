@@ -2,12 +2,20 @@ import React, { useContext } from "react";
 import { BsFillBagHeartFill } from "react-icons/bs";
 import "./Products.css";
 import ProductContext from "../productContext/ProductContext";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 const Products = () => {
-  const { products, cartProduct, setCartProduct, productIds, setProductIds } =
-    useContext(ProductContext);
-  let { totalAmt, setTotalAmt, discountedAmt, setDiscountedAmt } =
-    useContext(ProductContext);
+  const {
+    products,
+    cartProduct,
+    setCartProduct,
+    productIds,
+    setProductIds,
+    SetProductCount,
+    productCount,
+    totalAmt,
+    setTotalAmt,
+  } = useContext(ProductContext);
+  let { discountedAmt, setDiscountedAmt } = useContext(ProductContext);
 
   const handlerAddProductToCart = (id) => {
     setCartProduct([
@@ -15,19 +23,19 @@ const Products = () => {
       products.filter((product, key) => {
         if (product.id === id && !productIds.includes(product.id)) {
           setProductIds([...productIds, product.id]);
+          SetProductCount(productCount + 1);
           setDiscountedAmt(
             (discountedAmt += +product.prevPrice - +product.newPrice)
           );
-          setTotalAmt((totalAmt += +product.newPrice));
+          setTotalAmt(totalAmt + Number(product.newPrice));
           return true;
         }
         return false;
       }),
     ]);
-    toast.success("Product added to cart");
   };
   return (
-    <div className="mx-2 mt-4 grid gap-8 productContainer pb-3">
+    <div className="mx-2 mt-4 grid gap-8  pb-20 productContainer">
       {products.length === 0
         ? "Not available"
         : products.map((product, key) => {
