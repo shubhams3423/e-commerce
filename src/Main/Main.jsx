@@ -6,11 +6,11 @@ import Products from "../Products/Products";
 import Navbar from "../Navbar/Navbar";
 const Main = () => {
   return (
-    <div className="">
+    <div className="h-screen overflow-y-hidden">
       <Navbar />
       <div className="px-4 pt-8 pb-4 flex sm:px-10">
         <Sidebar />
-        <div className="w-full px-3  h-screen overflow-y-scroll   sm:px-6 ">
+        <div className="w-full px-3  h-screen overflow-y-scroll sm:px-6 ">
           <TopMenu />
           <Products />
         </div>
