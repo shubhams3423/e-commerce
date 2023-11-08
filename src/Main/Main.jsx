@@ -6,15 +6,13 @@ import Products from "../Products/Products";
 import Navbar from "../Navbar/Navbar";
 const Main = () => {
   return (
-    <div className="overflow-hidden h-screen">
+    <div className="">
       <Navbar />
       <div className="px-4 pt-8 pb-4 flex sm:px-10">
         <Sidebar />
-        <div className="w-full px-3 sm:px-6 ">
+        <div className="w-full px-3  h-screen overflow-y-scroll   sm:px-6 ">
           <TopMenu />
-          <div className="h-screen overflow-y-scroll pb-40">
-            <Products />
-          </div>
+          <Products />
         </div>
       </div>
     </div>

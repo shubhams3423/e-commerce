@@ -22,13 +22,13 @@ const Cart = () => {
   } = useContext(ProductContext);
   const handlerRemoveProductFromCart = (productId) => {
     setCartProduct(
-      cartProduct.filter((product, key) => product[0].id !== productId)
+      cartProduct.filter((product, key) => product[0]?.id !== productId)
     );
     SetProductCount(productCount - 1);
     setProductIds(productIds.filter((id, key) => id !== productId));
     setTotalAmt(
       totalAmt -
-        products.filter((product) => product.id === productId)[0].newPrice
+        products.filter((product, key) => product.id === productId)[0].newPrice
     );
     setDiscountedAmt(
       discountedAmt -
@@ -71,7 +71,7 @@ const Cart = () => {
                     <div className="px-2">
                       <div className="flex justify-between mb-3">
                         <div className="w-20">
-                          <img src={product[0].img} alt="" />
+                          <img src={product[0]?.img} alt="" />
                         </div>
                         <div>
                           <p>{product[0].title}</p>

@@ -1,18 +1,27 @@
 import React, { useContext } from "react";
 import "./TopMenu.css";
 import ProductContext from "../productContext/ProductContext";
+import { productObj } from "../file";
 const TopMenu = () => {
   const { setProducts, companyProductList } = useContext(ProductContext);
 
   const handlerBrandProducts = (e) => {
     setProducts(
-      companyProductList.filter(
-        (product, key) =>
-          product.company.toLowerCase() ===
-          (e.target.value === "All"
-            ? product.company.toLowerCase()
-            : e.target.value.toLowerCase())
-      )
+      companyProductList.length === 0
+        ? productObj.filter(
+            (product, key) =>
+              product.company.toLowerCase() ===
+              (e.target.value === "All"
+                ? product.company.toLowerCase()
+                : e.target.value.toLowerCase())
+          )
+        : companyProductList.filter(
+            (product, key) =>
+              product.company.toLowerCase() ===
+              (e.target.value === "All"
+                ? product.company.toLowerCase()
+                : e.target.value.toLowerCase())
+          )
     );
   };
 

@@ -35,7 +35,7 @@ const Products = () => {
     ]);
   };
   return (
-    <div className="mx-2 mt-4 grid gap-8 productContainer pb-3">
+    <div className="mx-2 mt-4 grid gap-8  pb-24 productContainer">
       {products.length === 0
         ? "Not available"
         : products.map((product, key) => {
