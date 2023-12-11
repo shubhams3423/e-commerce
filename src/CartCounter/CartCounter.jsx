@@ -1,18 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const CartCounter = ({ productCount }) => {
   return (
     <div>
-      <Link to="/cart">
-        <span className="absolute top-4 right-24 px-1 text-xs sm:right-28 text-white bg-red-500 rounded cursor-pointer ">
-          {productCount >= 10
-            ? 9 + "+"
-            : productCount >= 100 && productCount <= 100
+      <span className="w-6 border-solid border-white border-2 absolute top-2 right-2 flex items-center justify-center text-sm text-white bg-red-500 rounded-2xl cursor-pointer ">
+        {productCount >= 10
+          ? 9 + "+"
+          : productCount >= 100 && productCount <= 100
             ? 999 + "+"
             : productCount}
-        </span>
-      </Link>
+      </span>
     </div>
   );
 };

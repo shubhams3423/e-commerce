@@ -11,6 +11,7 @@ const ProductContextProvider = ({ children }) => {
   let [totalAmt, setTotalAmt] = useState(0);
   let [discountedAmt, setDiscountedAmt] = useState(0);
   const [productCount, SetProductCount] = useState(0);
+  const [cartProductQty, setCartProductQty] = useState(0);
   return (
     <div>
       <ProductContext.Provider
@@ -31,6 +32,8 @@ const ProductContextProvider = ({ children }) => {
           setDiscountedAmt,
           productCount,
           SetProductCount,
+          cartProductQty,
+          setCartProductQty,
         }}
       >
         {children}

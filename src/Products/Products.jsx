@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BsFillBagHeartFill } from "react-icons/bs";
+import { TiHeartFullOutline } from "react-icons/ti";
 import "./Products.css";
 import ProductContext from "../productContext/ProductContext";
 import { ToastContainer } from "react-toastify";
@@ -16,7 +16,6 @@ const Products = () => {
     setTotalAmt,
   } = useContext(ProductContext);
   let { discountedAmt, setDiscountedAmt } = useContext(ProductContext);
-
   const handlerAddProductToCart = (id) => {
     setCartProduct([
       ...cartProduct,
@@ -25,7 +24,7 @@ const Products = () => {
           setProductIds([...productIds, product.id]);
           SetProductCount(productCount + 1);
           setDiscountedAmt(
-            (discountedAmt += +product.prevPrice - +product.newPrice)
+            (discountedAmt += +product.prevPrice - +product.newPrice) //plus sign converts string into number
           );
           setTotalAmt(totalAmt + Number(product.newPrice));
           return true;
@@ -35,41 +34,52 @@ const Products = () => {
     ]);
   };
   return (
-    <div className="mx-2 mt-4 grid gap-8  pb-20 productContainer">
+    <div className="mx-2 mt-4 grid gap-9 pb-10 productContainer">
       {products.length === 0
         ? "Not available"
         : products.map((product, key) => {
             return (
-              <div className="flex flex-col product p-3 justify-evenly rounded-lg">
+              <div className="flex flex-col bg-white p-3 justify-evenly rounded-2xl ">
+                <div className="flex items-center justify-end mb-3">
+                  <TiHeartFullOutline
+                    className="text-black-400 cursor-pointer text-gray-300"
+                    onClick={() => handlerAddProductToCart(product.id)}
+                  />
+                </div>
                 <div className="mb-4">
                   <img src={product.img} alt="" className="w-full h-full" />
                 </div>
                 <div className="flex flex-col gap-y-1">
-                  <h1 className="text-lg font-medium">{product.title}</h1>
-                  <div className="">
-                    <div className="flex items-center justify-between">
-                      <div className="flex text-yellow-500">
-                        <span>{product.star}</span>
-                        <span>{product.star}</span>
-                        <span>{product.star}</span>
-                        <span>{product.star}</span>
-                        <span>{product.star}</span>
-                      </div>
-                      <p className="">{product.reviews}</p>
-                    </div>
-                    <div>
-                      <p className="">{product.category}</p>
-                    </div>
+                  <h1 className="text-sm text-blue-800 font-medium">
+                    {product.title}
+                  </h1>
+                  <div className="text-center">
+                    <p className="text-xl font-semibold text-indigo-800">
+                      <sup>$</sup>
+                      {product.newPrice}.00
+                    </p>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <p className="mr-3 line-through">{product.prevPrice}$</p>
-                      <p>{product.newPrice}$</p>
+                  <div className="">
+                    <div className="flex items-center justify-center">
+                      <div className="flex  gap-1">
+                        <span className="text-yellow-400 text-sm">
+                          {product.star}
+                          {product.star}
+                        </span>
+                        <span className="text-yellow-400 text-sm">
+                          {product.star}
+                        </span>
+                        <span className="text-yellow-400 text-sm">
+                          {product.star}
+                        </span>
+                        <span className="text-yellow-400 text-sm">
+                          {product.star}
+                        </span>
+                        <span className="text-yellow-400 text-sm">
+                          {product.star}
+                        </span>
+                      </div>
                     </div>
-                    <BsFillBagHeartFill
-                      className="text-black-400 cursor-pointer text-gray-600"
-                      onClick={() => handlerAddProductToCart(product.id)}
-                    />
                   </div>
                 </div>
               </div>

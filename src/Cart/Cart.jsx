@@ -19,6 +19,8 @@ const Cart = () => {
     setTotalAmt,
     setDiscountedAmt,
     products,
+    cartProductQty,
+    setCartProductQty,
   } = useContext(ProductContext);
   const handlerRemoveProductFromCart = (productId) => {
     setCartProduct(
@@ -37,6 +39,15 @@ const Cart = () => {
           products.filter((product, key) => product.id === productId)[0]
             .newPrice)
     );
+  };
+  const handlerIncreaseProductCounter = (productId) => {
+    cartProduct.map((product) =>
+      product[0].id === productId ? (product[0].qty += 1) : product[0].id
+    );
+    // increaseProductQty(+1);
+  };
+  const handlerDecreaseProductCounter = () => {
+    // setDecreaseProductQty();
   };
 
   return (
@@ -80,11 +91,19 @@ const Cart = () => {
                       <div className="mb-2 flex justify-between">
                         <div className="flex">
                           <div>
-                            <button className="px-2  bg-slate-300 rounded me-1">
+                            <button
+                              className="px-2  bg-slate-300 rounded me-1"
+                              onClick={handlerDecreaseProductCounter}
+                            >
                               -
                             </button>
-                            <span>{0}</span>
-                            <button className="px-2  bg-slate-300 rounded ms-1">
+                            <span>{cartProductQty}</span>
+                            <button
+                              className="px-2  bg-slate-300 rounded ms-1"
+                              onClick={() =>
+                                handlerIncreaseProductCounter(product[0].id)
+                              }
+                            >
                               +
                             </button>
                           </div>
