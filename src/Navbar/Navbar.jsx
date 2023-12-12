@@ -15,7 +15,6 @@ const Navbar = () => {
       setInput("");
     }
   };
-
   return (
     <div>
       <div className="px-4 py-1 h-16 flex items-center">
@@ -23,7 +22,7 @@ const Navbar = () => {
           <div className="w-10 h-10 flex items-center  ">
             <HiMenuAlt3 className="text-2xl" />
           </div>
-          <div className="w-10 h-10 flex items-center  ">
+          <div className="w-10 h-10 flex items-center ">
             <div>
               <span className="text-blue-800 text-2xl">X</span>
               <span className="text-emerald-300 text-sm">E</span>

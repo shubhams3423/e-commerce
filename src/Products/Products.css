@@ -1,3 +1,6 @@
 .productContainer {
   grid-template-columns: repeat(auto-fit, 10rem);
 }
+.likedProduct {
+  margin-top: 1px;
+}

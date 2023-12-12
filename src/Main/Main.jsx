@@ -1,4 +1,5 @@
 import React from "react";
+import "./Main.css";
 import TopMenu from "../TopMenu/TopMenu";
 import Products from "../Products/Products";
 import Navbar from "../Navbar/Navbar";

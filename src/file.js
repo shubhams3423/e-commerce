@@ -12,6 +12,7 @@ export const productObj = [
     color: "white",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ export const productObj = [
     color: "red",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
 
   {
@@ -39,6 +41,7 @@ export const productObj = [
     color: "green",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 4,
@@ -52,6 +55,7 @@ export const productObj = [
     color: "black",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 5,
@@ -65,6 +69,7 @@ export const productObj = [
     color: "green",
     category: "flats",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 6,
@@ -78,6 +83,7 @@ export const productObj = [
     color: "black",
     category: "flats",
     qty: 0,
+    likedProduct: false,
   },
 
   {
@@ -92,6 +98,7 @@ export const productObj = [
     color: "white",
     category: "flats",
     qty: 0,
+    likedProduct: false,
   },
 
   {
@@ -106,6 +113,7 @@ export const productObj = [
     color: "green",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
 
   {
@@ -120,6 +128,7 @@ export const productObj = [
     color: "blue",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
 
   {
@@ -134,6 +143,7 @@ export const productObj = [
     color: "green",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 11,
@@ -147,6 +157,7 @@ export const productObj = [
     color: "red",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 12,
@@ -160,6 +171,7 @@ export const productObj = [
     color: "black",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 13,
@@ -173,6 +185,7 @@ export const productObj = [
     color: "white",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 14,
@@ -186,6 +199,7 @@ export const productObj = [
     color: "black",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
 
   {
@@ -200,6 +214,7 @@ export const productObj = [
     color: "green",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 16,
@@ -213,6 +228,7 @@ export const productObj = [
     color: "red",
     category: "flats",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 17,
@@ -226,6 +242,7 @@ export const productObj = [
     color: "white",
     category: "flats",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 18,
@@ -239,6 +256,7 @@ export const productObj = [
     color: "blue",
     category: "flats",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 19,
@@ -252,6 +270,7 @@ export const productObj = [
     color: "black",
     category: "sandals",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 20,
@@ -265,6 +284,7 @@ export const productObj = [
     color: "black",
     category: "heels",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 21,
@@ -278,6 +298,7 @@ export const productObj = [
     color: "black",
     category: "heels",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 22,
@@ -291,6 +312,7 @@ export const productObj = [
     color: "red",
     category: "heels",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 23,
@@ -304,6 +326,7 @@ export const productObj = [
     color: "red",
     category: "sneakers",
     qty: 0,
+    likedProduct: false,
   },
 
   {
@@ -318,6 +341,7 @@ export const productObj = [
     color: "black",
     category: "heels",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 25,
@@ -331,6 +355,7 @@ export const productObj = [
     color: "black",
     category: "heels",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 26,
@@ -344,6 +369,7 @@ export const productObj = [
     color: "white",
     category: "heels",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 27,
@@ -357,6 +383,7 @@ export const productObj = [
     color: "black",
     category: "heels",
     qty: 0,
+    likedProduct: false,
   },
   {
     id: 28,
@@ -370,5 +397,6 @@ export const productObj = [
     color: "black",
     category: "flats",
     qty: 0,
+    likedProduct: false,
   },
 ];

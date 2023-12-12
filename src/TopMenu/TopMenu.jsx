@@ -4,26 +4,7 @@ import { productObj } from "../file";
 import { MdKeyboardArrowDown } from "react-icons/md";
 const TopMenu = () => {
   const { setProducts, companyProductList } = useContext(ProductContext);
-
-  const handlerBrandProducts = (e) => {
-    // setProducts(
-    //   companyProductList.length === 0
-    //     ? productObj.filter(
-    //         (product, key) =>
-    //           product.company.toLowerCase() ===
-    //           (e.target.value === "All"
-    //             ? product.company.toLowerCase()
-    //             : e.target.value.toLowerCase())
-    //       )
-    //     : companyProductList.filter(
-    //         (product, key) =>
-    //           product.company.toLowerCase() ===
-    //           (e.target.value === "All"
-    //             ? product.company.toLowerCase()
-    //             : e.target.value.toLowerCase())
-    //       )
-    // );
-  };
+  const handleProductTypes = (e) => {};
 
   return (
     <div>
@@ -35,11 +16,11 @@ const TopMenu = () => {
             <MdKeyboardArrowDown className="me-2 text-lg text-gray-600" />
           </div>
         </div>
-        <div className="flex gap-x-4 pl-2  ">
+        <div className="flex gap-x-4 pl-2">
           <button
             className="rounded-xl bg-white px-3 py-2 text-sm flex items-center"
             value="Sneakers"
-            onClick={handlerBrandProducts}
+            onClick={handleProductTypes}
           >
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6c3Q46vk7w2G4_fYcT_U_zmNoYMMb-meR5g&usqp=CAU"
@@ -51,7 +32,7 @@ const TopMenu = () => {
           <button
             className="rounded-xl bg-white px-3 py-1 text-sm flex items-center"
             value="Watch"
-            onClick={handlerBrandProducts}
+            onClick={handleProductTypes}
           >
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxNaoYPsICJOR7dO-f0q9iSfAWaF2c88OhvQ&usqp=CAU"
@@ -63,7 +44,7 @@ const TopMenu = () => {
           <button
             className="rounded-xl  bg-white px-3 py-1 text-sm flex items-center"
             value="BagPack"
-            onClick={handlerBrandProducts}
+            onClick={handleProductTypes}
           >
             <img
               src="https://www.fgear.in/cdn/shop/files/Untitled-1_2_copy_081f1e36-f118-4f1d-9063-985b9db4d291.jpg?v=1689761283"
