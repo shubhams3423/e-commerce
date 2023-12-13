@@ -1,3 +1,16 @@
-.footer-shadow {
-    box-shadow: 3px -2px 8px #8080806e;
+/* .footer-shadow {
+  box-shadow: 3px -2px 8px #8080806e;
+} */
+.cartContainer {
+  background-color: #ededed;
+}
+.increamentBtn {
+  box-shadow: 0px 1px 4px #ccc9c9;
+}
+.cartProuductTitle {
+  font-size: 13px;
+}
+.checkoutBtn {
+  opacity: 0.9;
+  font-size: 13px;
 }

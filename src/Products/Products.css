@@ -4,3 +4,12 @@
 .likedProduct {
   margin-top: 1px;
 }
+.product {
+  width: 10rem;
+  transition: all 0.4s ease-in-out;
+  min-height: 15rem;
+}
+.product:hover {
+  width: 10.2rem;
+  background-color: rgb(178, 178, 178);
+}

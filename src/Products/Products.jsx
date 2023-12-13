@@ -56,7 +56,7 @@ const Products = () => {
           : products.map((product, key) => {
               return (
                 <div>
-                  <div className="flex flex-col bg-white p-3 justify-evenly rounded-2xl ">
+                  <div className="flex flex-col bg-white p-3 justify-evenly rounded-2xl product ">
                     <div className="flex items-center justify-end mb-3 max-h-2.5">
                       <div
                         className={`${
@@ -83,7 +83,10 @@ const Products = () => {
                         />
                       </div>
                       <div className="flex flex-col gap-y-1">
-                        <h1 className="text-sm text-blue-800 font-medium truncate mb-1">
+                        <h1
+                          className="text-sm text-blue-800 font-medium truncate mb-1"
+                          title={product.title}
+                        >
                           {product.title}
                         </h1>
                         <div className="text-center">
