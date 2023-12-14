@@ -11,7 +11,7 @@ export const productObj = [
     company: "Nike",
     color: "white",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -25,7 +25,7 @@ export const productObj = [
     company: "Nike",
     color: "red",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
 
@@ -40,7 +40,7 @@ export const productObj = [
     company: "Nike",
     color: "green",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -54,7 +54,7 @@ export const productObj = [
     company: "Nike",
     color: "black",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -68,7 +68,7 @@ export const productObj = [
     company: "Vans",
     color: "green",
     category: "flats",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -82,7 +82,7 @@ export const productObj = [
     company: "Adidas",
     color: "black",
     category: "flats",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
 
@@ -97,7 +97,7 @@ export const productObj = [
     company: "Vans",
     color: "white",
     category: "flats",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
 
@@ -112,7 +112,7 @@ export const productObj = [
     company: "Nike",
     color: "green",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
 
@@ -127,7 +127,7 @@ export const productObj = [
     company: "Adidas",
     color: "blue",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
 
@@ -142,7 +142,7 @@ export const productObj = [
     company: "Puma",
     color: "green",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -156,7 +156,7 @@ export const productObj = [
     company: "Puma",
     color: "red",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -170,7 +170,7 @@ export const productObj = [
     company: "Puma",
     color: "black",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -184,7 +184,7 @@ export const productObj = [
     company: "Puma",
     color: "white",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -198,7 +198,7 @@ export const productObj = [
     company: "Puma",
     color: "black",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
 
@@ -213,7 +213,7 @@ export const productObj = [
     company: "Puma",
     color: "green",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -227,7 +227,7 @@ export const productObj = [
     company: "Vans",
     color: "red",
     category: "flats",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -241,7 +241,7 @@ export const productObj = [
     company: "Vans",
     color: "white",
     category: "flats",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -255,7 +255,7 @@ export const productObj = [
     company: "Vans",
     color: "blue",
     category: "flats",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -269,7 +269,7 @@ export const productObj = [
     company: "Nike",
     color: "black",
     category: "sandals",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -283,7 +283,7 @@ export const productObj = [
     company: "Vans",
     color: "black",
     category: "heels",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -297,7 +297,7 @@ export const productObj = [
     company: "puma",
     color: "black",
     category: "heels",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -311,7 +311,7 @@ export const productObj = [
     company: "Nike",
     color: "red",
     category: "heels",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -325,7 +325,7 @@ export const productObj = [
     company: "Nike",
     color: "red",
     category: "sneakers",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
 
@@ -340,7 +340,7 @@ export const productObj = [
     company: "Nike",
     color: "black",
     category: "heels",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -354,7 +354,7 @@ export const productObj = [
     company: "Adidas",
     color: "black",
     category: "heels",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -368,7 +368,7 @@ export const productObj = [
     company: "Adidas",
     color: "white",
     category: "heels",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -382,7 +382,7 @@ export const productObj = [
     company: "Adidas",
     color: "black",
     category: "heels",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
   {
@@ -396,7 +396,7 @@ export const productObj = [
     company: "Adidas",
     color: "black",
     category: "flats",
-    qty: 0,
+    qty: 1,
     likedProduct: false,
   },
 ];

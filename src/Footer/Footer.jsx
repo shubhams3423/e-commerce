@@ -15,20 +15,20 @@ const Footer = () => {
       <div className="flex justify-around  flex-grow  h-full items-center  bottomLeftMenu">
         <div className="">
           <NavLink to="/">
-            <IoMdHome className="text-2xl text-gray-400" />
+            <IoMdHome className="text-2xl text-gray-400 footerIcon" />
           </NavLink>
         </div>
         <div className="">
           <NavLink to="/likedProducts">
-            <TiHeartFullOutline className="text-2xl text-gray-400" />
+            <TiHeartFullOutline className="text-2xl text-gray-400 footerIcon" />
           </NavLink>
         </div>
       </div>
       <div>
         <div className="flex justify-center relative py-3 px-3 bottom-8 cartIcon border-10 rounded-full">
-          <div className=" bg-purple-500 p-3 rounded-full">
+          <div className=" bg-indigo-800 p-3 rounded-full">
             <NavLink to="/cart">
-              <PiShoppingCartFill className="text-4xl text-white" />
+              <PiShoppingCartFill className="text-4xl text-white footerIcon" />
             </NavLink>
             {productCount > 0 && <CartCounter productCount={productCount} />}
           </div>
@@ -36,11 +36,11 @@ const Footer = () => {
       </div>
       <div className="flex justify-around flex-grow h-full items-center bottomRightMenu">
         <div className="">
-          <MdStickyNote2 className="text-2xl text-gray-400" />
+          <MdStickyNote2 className="text-2xl text-gray-400 footerIcon" />
         </div>
         <div className="">
           <NavLink to="/user">
-            <IoMdPerson className="text-2xl text-gray-400" />
+            <IoMdPerson className="text-2xl text-gray-400 footerIcon" />
           </NavLink>
         </div>
       </div>

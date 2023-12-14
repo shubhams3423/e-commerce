@@ -6,12 +6,10 @@ const ProductContextProvider = ({ children }) => {
   const [products, setProducts] = useState(productObj);
   const [checkItems, setCheckedItems] = useState(["All", "All"]);
   const [companyProductList, setCompanyProductList] = useState([]);
-  const [cartProduct, setCartProduct] = useState([]);
+  const [cartProducts, setCartProducts] = useState([]);
   const [productIds, setProductIds] = useState([]);
-  let [totalAmt, setTotalAmt] = useState(0);
-  let [discountedAmt, setDiscountedAmt] = useState(0);
+  let [totalCartAmt, setTotalCartAmt] = useState(0);
   const [productCount, SetProductCount] = useState(0);
-  const [cartProductQty, setCartProductQty] = useState(0);
   const [likedProducts, setLikedProducts] = useState([]);
   return (
     <div>
@@ -23,18 +21,14 @@ const ProductContextProvider = ({ children }) => {
           setCheckedItems,
           companyProductList,
           setCompanyProductList,
-          cartProduct,
-          setCartProduct,
+          cartProducts,
+          setCartProducts,
           productIds,
           setProductIds,
-          totalAmt,
-          setTotalAmt,
-          discountedAmt,
-          setDiscountedAmt,
+          totalCartAmt,
+          setTotalCartAmt,
           productCount,
           SetProductCount,
-          cartProductQty,
-          setCartProductQty,
           likedProducts,
           setLikedProducts,
         }}

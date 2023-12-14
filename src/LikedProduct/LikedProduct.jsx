@@ -4,31 +4,24 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { TiHeartFullOutline } from "react-icons/ti";
 import { BsPlus } from "react-icons/bs";
-import { IoSearchOutline } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
 import "./LikedProduct.css";
 const LikedProduct = () => {
-  const {
-    productCount,
-    SetProductCount,
-    likedProducts,
-    setLikedProducts,
-    cartProduct,
-    setCartProduct,
-  } = useContext(ProductContext);
+  const { likedProducts, cartProducts, setCartProducts, SetProductCount } =
+    useContext(ProductContext);
+  let { totalCartAmt, setTotalCartAmt } = useContext(ProductContext);
   const [selectedProducts, setSelectedProduct] = useState(likedProducts);
   const handlerAddProductToCart = (id) => {
-    setCartProduct([
-      ...cartProduct,
-      likedProducts.filter((product1, key) =>
-        product1.id === id ? product1 : null
-      ),
+    setCartProducts([
+      ...cartProducts,
+      likedProducts.find((obj) => obj.id === id),
     ]);
-    setSelectedProduct(
-      selectedProducts.filter((product, key) => product.id !== id)
+    setTotalCartAmt(
+      (totalCartAmt += +likedProducts.find((product) => product.id === id)
+        .newPrice)
     );
-    setLikedProducts(likedProducts.filter((product, key) => product.id !== id));
   };
+  SetProductCount(cartProducts.length);
   const handlerInputProudct = (e) => {
     setSelectedProduct(
       likedProducts.filter((product, key) =>
@@ -39,7 +32,7 @@ const LikedProduct = () => {
 
   return (
     <div className="h-screen bg-gray-100">
-      <div className="px-3 overflow-hidden h-full">
+      <div className="px-2 overflow-hidden h-full">
         <div className="flex justify-between items-center mt-5 mx-4">
           <div>
             <Link to="/">
@@ -74,7 +67,6 @@ const LikedProduct = () => {
               : selectedProducts.map((product) => {
                   return (
                     <div className="bg-white p-3 rounded-2xl cursor-pointer likedProducts">
-                      {/* <Link  > */}
                       <div className="flex flex-col justify-between">
                         <div>
                           <div className="mb-4 ">
@@ -108,7 +100,6 @@ const LikedProduct = () => {
                           </div>
                         </div>
                       </div>
-                      {/* </Link> */}
                     </div>
                   );
                 })}

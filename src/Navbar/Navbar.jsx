@@ -30,7 +30,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <input
               type="text"
-              className="w-34 rounded-lg py-0.5 px-2 mr-2 border-solid border-2 border-black"
+              className="w-34 rounded-lg py-1 px-3 mr-2  outline-none"
               placeholder="Search..."
               onChange={handlerSearchProduct}
             />

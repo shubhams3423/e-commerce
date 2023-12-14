@@ -5,35 +5,9 @@ import ProductContext from "../productContext/ProductContext";
 import { ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
 const Products = () => {
-  const {
-    products,
-    setProducts,
-    cartProduct,
-    setCartProduct,
-    productIds,
-    setProductIds,
-    SetProductCount,
-    productCount,
-    totalAmt,
-    setTotalAmt,
-    likedProducts,
-    setLikedProducts,
-  } = useContext(ProductContext);
-  let { discountedAmt, setDiscountedAmt } = useContext(ProductContext);
+  const { products, setProducts, setLikedProducts } =
+    useContext(ProductContext);
   const handlerAddProductToCart = (id) => {
-    // setCartProduct([
-    //   ...cartProduct,
-    //   products.filter((product, key) => {
-    //     if (product.id === id && !productIds.includes(product.id)) {
-    //       setProductIds([...productIds, product.id]);
-    //       SetProductCount(productCount + 1);
-    //       setDiscountedAmt(
-    //         (discountedAmt += +product.prevPrice - +product.newPrice) //plus sign converts string into number
-    //       );
-    //       setTotalAmt(totalAmt + Number(product.newPrice));
-    //     }
-    //   }),
-    // ]);
     setProducts([
       ...products,
       products.map((product, key) => {
@@ -50,7 +24,7 @@ const Products = () => {
   };
   return (
     <div>
-      <div className="mx-2 mt-4 grid gap-9 pb-10 productContainer">
+      <div className="mx-2 mt-4 grid gap-6 pb-10 productContainer">
         {products.length === 0
           ? "Not available"
           : products.map((product, key) => {

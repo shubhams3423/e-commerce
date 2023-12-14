@@ -11,3 +11,6 @@
 .cartIcon {
   background: linear-gradient(transparent, transparent, #d7d6d6);
 }
+.active .footerIcon {
+  color: #3730a3;
+}

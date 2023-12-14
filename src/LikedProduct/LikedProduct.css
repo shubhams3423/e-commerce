@@ -1,7 +1,7 @@
 .likedProducts {
   width: 10rem;
   transition: all 0.4s ease-in-out;
-  min-height: 12rem;
+  min-height: 13rem;
 }
 
 .likedProducts:hover {
