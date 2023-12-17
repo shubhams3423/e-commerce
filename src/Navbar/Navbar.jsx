@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import ProductContext from "../productContext/ProductContext";
-import { IoSearchOutline } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { productObj } from "../file";
+import { productObj } from "../ShoesObjects";
+import SearchProductComponent from "../SearchProduct/SearchProductComponent";
 const Navbar = () => {
-  const { setProducts, companyProductList } = useContext(ProductContext);
+  const { setProducts } = useContext(ProductContext);
   const handlerSearchProduct = (e) => {
     setProducts(
       productObj.filter((product, key) =>
@@ -21,18 +21,16 @@ const Navbar = () => {
           </div>
           <div className="w-10 h-10 flex items-center ">
             <div>
-              <span className="text-blue-800 text-2xl">X</span>
-              <span className="text-emerald-300 text-sm">E</span>
+              <span className="text-blue-800 text-2xl font-medium">X</span>
+              <span className="text-emerald-300 text-sm font-medium">E</span>
             </div>
           </div>
         </div>
         <div className="flex grow justify-end gap-x-2 ">
           <div className="flex items-center">
-            <input
-              type="text"
-              className="w-34 rounded-lg py-1 px-3 mr-2  outline-none"
-              placeholder="Search..."
-              onChange={handlerSearchProduct}
+            <SearchProductComponent
+              inputFunction={handlerSearchProduct}
+              width="full"
             />
           </div>
         </div>
