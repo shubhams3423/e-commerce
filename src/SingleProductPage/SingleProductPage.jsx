@@ -12,12 +12,12 @@ const SingleProductPage = () => {
         <TopSection topSectionTitle="XE" showRedHeart={true} />
       </div>
       <div>
-        <SingleProductImage product={productObj[productId]} />
+        <SingleProductImage product={productObj[productId - 1]} />
       </div>
       <div className="h-full">
         <SingleProductDetails
-          product={productObj[productId]}
-          productId={productId}
+          product={productObj[productId - 1]}
+          productId={productId - 1}
         />
       </div>
     </div>

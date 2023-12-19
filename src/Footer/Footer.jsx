@@ -11,36 +11,36 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   const { productCount } = useContext(ProductContext);
   return (
-    <div className="h-12 bg-white flex items-center fixed left-0 right-0 bottom-0 ">
-      <div className="flex justify-around  flex-grow  h-full items-center  bottomLeftMenu">
+    <div className="fixed bottom-0 left-0 right-0 flex h-12 items-center bg-white ">
+      <div className="bottomLeftMenu flex  h-full  flex-grow items-center  justify-around">
         <div className="">
           <NavLink to="/">
-            <IoMdHome className="text-2xl text-gray-400 footerIcon" />
+            <IoMdHome className="footerIcon text-2xl text-gray-400" />
           </NavLink>
         </div>
         <div className="">
           <NavLink to="/likedProducts">
-            <TiHeartFullOutline className="text-2xl text-gray-400 footerIcon" />
+            <TiHeartFullOutline className="footerIcon text-2xl text-gray-400" />
           </NavLink>
         </div>
       </div>
       <div>
-        <div className="flex justify-center relative py-3 px-3 bottom-8 cartIcon border-10 rounded-full">
-          <div className=" bg-indigo-800 p-3 rounded-full">
+        <div className="cartIcon border-10 relative bottom-8 flex justify-center rounded-full px-3 py-3">
+          <div className=" rounded-full bg-indigo-800 p-3">
             <NavLink to="/cart">
-              <PiShoppingCartFill className="text-4xl text-white footerIcon" />
+              <PiShoppingCartFill className="footerIcon text-4xl text-white" />
             </NavLink>
             {productCount > 0 && <CartCounter productCount={productCount} />}
           </div>
         </div>
       </div>
-      <div className="flex justify-around flex-grow h-full items-center bottomRightMenu">
+      <div className="bottomRightMenu flex h-full flex-grow items-center justify-around">
         <div className="">
-          <MdStickyNote2 className="text-2xl text-gray-400 footerIcon" />
+          <MdStickyNote2 className="footerIcon text-2xl text-gray-400" />
         </div>
         <div className="">
           <NavLink to="/user">
-            <IoMdPerson className="text-2xl text-gray-400 footerIcon" />
+            <IoMdPerson className="footerIcon text-2xl text-gray-400" />
           </NavLink>
         </div>
       </div>

@@ -12,6 +12,10 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="cart" element={<Cart />} />
         <Route path="likedProducts" element={<LikedProduct />} />
+        <Route
+          path="likedProducts/:productId"
+          element={<SingleProductPage />}
+        />
         <Route path=":productId" element={<SingleProductPage />} />
         <Route path="user" element={<User />} />
       </Routes>

@@ -3,7 +3,7 @@ import Footer from "../Footer/Footer";
 const User = () => {
   return (
     <>
-      <div className="text-center mt-5">
+      <div className="mt-5 text-center">
         <h1>User</h1>
       </div>
       <Footer />

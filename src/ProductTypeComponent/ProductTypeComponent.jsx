@@ -4,16 +4,16 @@ const ProductTypeComponent = () => {
   return (
     <div>
       <div className="mb-6">
-        <div className="flex justify-between items-center mb-4">
+        <div className="mb-4 flex items-center justify-between">
           <h1 className="pl-2  text-xl font-bold">Our Products</h1>
           <div className="flex items-center">
-            <p className="text-sm text-gray-600 me-1">Sort by</p>
+            <p className="me-1 text-sm text-gray-600">Sort by</p>
             <MdKeyboardArrowDown className="me-2 text-lg text-gray-600" />
           </div>
         </div>
         <div className="flex gap-x-4 pl-2">
           <button
-            className="rounded-xl bg-white px-3 py-2 text-sm flex items-center"
+            className="flex items-center rounded-xl bg-white px-3 py-2 text-sm"
             value="Sneakers"
           >
             <img
@@ -24,7 +24,7 @@ const ProductTypeComponent = () => {
             <span className="font-medium">Sneakers</span>
           </button>
           <button
-            className="rounded-xl bg-white px-3 py-1 text-sm flex items-center"
+            className="flex items-center rounded-xl bg-white px-3 py-1 text-sm"
             value="Watch"
           >
             <img
@@ -35,7 +35,7 @@ const ProductTypeComponent = () => {
             <span className="font-medium">Watch</span>
           </button>
           <button
-            className="rounded-xl  bg-white px-3 py-1 text-sm flex items-center"
+            className="flex  items-center rounded-xl bg-white px-3 py-1 text-sm"
             value="BagPack"
           >
             <img

@@ -8,21 +8,21 @@ const Navbar = () => {
   const handlerSearchProduct = (e) => {
     setProducts(
       productObj.filter((product, key) =>
-        product.title.toLowerCase().includes(e.target.value.toLowerCase())
-      )
+        product.title.toLowerCase().includes(e.target.value.toLowerCase()),
+      ),
     );
   };
   return (
     <div>
-      <div className="px-4 py-1 h-16 flex items-center">
+      <div className="flex h-16 items-center px-4 py-1">
         <div className="flex">
-          <div className="w-10 h-10 flex items-center  ">
-            <HiMenuAlt3 className="text-2xl" />
+          <div className="flex h-10 w-10 items-center  ">
+            <HiMenuAlt3 className="cursor-pointer text-2xl" />
           </div>
-          <div className="w-10 h-10 flex items-center ">
+          <div className="flex h-10 w-10 items-center ">
             <div>
-              <span className="text-blue-800 text-2xl font-medium">X</span>
-              <span className="text-emerald-300 text-sm font-medium">E</span>
+              <span className="text-2xl font-medium text-blue-800">X</span>
+              <span className="text-sm font-medium text-emerald-300">E</span>
             </div>
           </div>
         </div>

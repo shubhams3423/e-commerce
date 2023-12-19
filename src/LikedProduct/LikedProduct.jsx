@@ -1,47 +1,66 @@
 import React, { useContext, useState } from "react";
 import ProductContext from "../productContext/ProductContext";
-
-import "./LikedProduct.css";
-import ProductRender from "../ProductRender/ProductRender";
 import TopSection from "../TopSection/TopSection";
 import SearchProductComponent from "../SearchProduct/SearchProductComponent";
+import ProductsRender from "../ProductsRender/ProductsRender";
+import { productObj } from "../ShoesObjects";
 const LikedProduct = () => {
-  const { likedProducts, cartProducts, setCartProducts, SetProductCount } =
+  const { likedProducts, cartProducts, setCartProducts, setProductCount } =
     useContext(ProductContext);
   let { totalCartAmt, setTotalCartAmt } = useContext(ProductContext);
   const [selectedProducts, setSelectedProduct] = useState(likedProducts);
   const handlerAddProductToCart = (id) => {
-    setCartProducts([
-      ...cartProducts,
-      likedProducts.find((obj) => obj.id === id),
-    ]);
+    if (
+      cartProducts.includes(productObj.find((product) => product.id === id))
+    ) {
+      setCartProducts(
+        cartProducts.map((product, key) => {
+          if (product.id === id) {
+            product.qty += 1;
+            return product;
+          }
+          return product;
+        }),
+      );
+    } else {
+      setCartProducts([
+        ...cartProducts,
+        productObj.find((product) => product.id === id),
+      ]);
+      setProductCount(cartProducts.length + 1);
+    }
+
     setTotalCartAmt(
       (totalCartAmt += +likedProducts.find((product) => product.id === id)
-        .newPrice)
+        .newPrice),
     );
   };
-  SetProductCount(cartProducts.length);
   const handlerInputProudct = (e) => {
     setSelectedProduct(
       likedProducts.filter((product, key) =>
-        product.title.toLowerCase().includes(e.target.value.toLowerCase())
-      )
+        product.title.toLowerCase().includes(e.target.value.toLowerCase()),
+      ),
     );
   };
 
   return (
     <div className="h-screen bg-gray-100">
-      <div className="px-2 overflow-hidden h-full ">
+      <div className="h-full overflow-hidden px-2 ">
         <TopSection topSectionTitle="For You" showRedHeart={true} />
-        <div className="flex items-center mt-4 mx-4 mb-5">
+        <div className="mx-4 mb-5 mt-4 flex items-center">
           <SearchProductComponent inputFunction={handlerInputProudct} />
         </div>
-        <div className="h-full overflow-scroll ">
-          <ProductRender
-            products={selectedProducts}
-            productHandler={handlerAddProductToCart}
-            addTocart={true}
-          />
+        <div className=" h-[calc(100%-7rem)] overflow-y-scroll">
+          {selectedProducts.length === 0 ? (
+            <h1>There is no product yet.</h1>
+          ) : (
+            <ProductsRender
+              products={selectedProducts}
+              productHandlerFunction={handlerAddProductToCart}
+              addTocart={true}
+              isLikedProduct={true}
+            />
+          )}
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import "./Products.css";
 import ProductContext from "../productContext/ProductContext";
-import { ToastContainer } from "react-toastify";
-import ProductRender from "../ProductRender/ProductRender";
+import ProductsRender from "../ProductsRender/ProductsRender";
+import ProductNotFound from "../ProductNoFound/ProductNotFound";
 const Products = () => {
-  const { products, setProducts, setLikedProducts } =
+  const { products, setLikedProducts, setProducts } =
     useContext(ProductContext);
   const handlerAddProductToLikedProducts = (id) => {
     setProducts([
@@ -17,19 +17,22 @@ const Products = () => {
     ]);
     setLikedProducts(
       products.filter((product, key) =>
-        product.likedProduct === true ? product : null
-      )
+        product.likedProduct === true ? product : null,
+      ),
     );
   };
   return (
     <div>
-      <ProductRender
-        products={products}
-        productHandler={handlerAddProductToLikedProducts}
-        showLikedProducts={true}
-        showRatings={true}
-      />
-      <ToastContainer />
+      {products.length === 0 ? (
+        <ProductNotFound />
+      ) : (
+        <ProductsRender
+          products={products}
+          productHandlerFunction={handlerAddProductToLikedProducts}
+          showLikedProducts={true}
+          showRatings={true}
+        />
+      )}
     </div>
   );
 };

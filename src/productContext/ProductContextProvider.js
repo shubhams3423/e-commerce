@@ -9,7 +9,7 @@ const ProductContextProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
   const [productIds, setProductIds] = useState([]);
   let [totalCartAmt, setTotalCartAmt] = useState(0);
-  const [productCount, SetProductCount] = useState(0);
+  const [productCount, setProductCount] = useState(0);
   const [likedProducts, setLikedProducts] = useState([]);
   const productBgColors = ["bg-red-400", "bg-blue-400", "bg-yellow-400"];
   const productBorderColors = [
@@ -35,7 +35,7 @@ const ProductContextProvider = ({ children }) => {
           totalCartAmt,
           setTotalCartAmt,
           productCount,
-          SetProductCount,
+          setProductCount,
           likedProducts,
           setLikedProducts,
           productBgColors,

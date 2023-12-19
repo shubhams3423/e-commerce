@@ -5,7 +5,7 @@ const SearchProductComponent = ({ inputFunction }) => {
     <div className="w-full">
       <input
         type="text"
-        className={` w-full rounded-lg py-1 px-3 mr-2  outline-none`}
+        className={` mr-2 w-full rounded-lg px-3 py-1  outline-none`}
         placeholder="Search..."
         onChange={inputFunction}
       />

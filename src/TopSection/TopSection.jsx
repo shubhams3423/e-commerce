@@ -4,9 +4,9 @@ import { MdDelete } from "react-icons/md";
 import { TiHeartFullOutline } from "react-icons/ti";
 import { Link } from "react-router-dom";
 
-const TopSection = ({ topSectionTitle, showRedHeart }) => {
+const TopSection = ({ topSectionTitle, showRedHeart, showDeleteIcon }) => {
   return (
-    <div className="flex justify-between items-center mt-5 mx-4">
+    <div className="mx-4 mt-5 flex items-center justify-between">
       <div>
         <Link to="/">
           <FaArrowLeft />
@@ -16,8 +16,8 @@ const TopSection = ({ topSectionTitle, showRedHeart }) => {
         <div>
           {topSectionTitle === "XE" ? (
             <div>
-              <span className="text-blue-800 text-2xl font-medium">X</span>
-              <span className="text-emerald-300 text-sm font-medium">E</span>
+              <span className="text-2xl font-medium text-blue-800">X</span>
+              <span className="text-sm font-medium text-emerald-300">E</span>
             </div>
           ) : (
             <h2 className="font-bold">{topSectionTitle}</h2>
@@ -25,13 +25,14 @@ const TopSection = ({ topSectionTitle, showRedHeart }) => {
         </div>
       </div>
       <div>
-        {showRedHeart ? (
-          <div className="bg-red-500 rounded-full w-6 h-6 flex justify-center items-center">
+        {showRedHeart && (
+          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500">
             <TiHeartFullOutline className="text-white" />
           </div>
-        ) : (
+        )}
+        {showDeleteIcon && (
           <div className=" ">
-            <MdDelete className="text-gray-600 text-2xl cursor-pointer" />
+            <MdDelete className="cursor-pointer text-2xl text-gray-600" />
           </div>
         )}
       </div>

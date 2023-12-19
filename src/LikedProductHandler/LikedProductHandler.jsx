@@ -1,22 +1,22 @@
 import React from "react";
 import { TiHeartFullOutline } from "react-icons/ti";
 
-const LikedProductHandler = ({ product, productHandler }) => {
+const LikedProductHandler = ({ product, productHandlerFunction }) => {
   return (
-    <div className="flex items-center justify-end mb-3 max-h-2.5">
+    <div className="mb-3 flex max-h-2.5 items-center justify-end">
       <div
         className={`${
           product.likedProduct === true &&
-          "bg-red-500 rounded-full w-5 h-5 mt flex justify-center items-center "
+          "mt flex h-5 w-5 items-center justify-center rounded-full bg-red-500"
         }`}
       >
         <TiHeartFullOutline
-          className={`text-black-400 text-lg cursor-pointer likedProduct ${
+          className={`text-black-400  mt-[1px] cursor-pointer text-lg ${
             product.likedProduct === true
-              ? "text-white text-sm"
+              ? "text-sm text-white"
               : "text-gray-300"
           }`}
-          onClick={() => productHandler(product.id)}
+          onClick={() => productHandlerFunction(product.id)}
         />
       </div>
     </div>
