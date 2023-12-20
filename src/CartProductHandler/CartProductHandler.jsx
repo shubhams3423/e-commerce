@@ -1,6 +1,4 @@
 import React from "react";
-import EmptyCart from "../EmptyCart/EmptyCart";
-
 const CartProductHandler = ({
   products,
   handlerProductBorderColors,

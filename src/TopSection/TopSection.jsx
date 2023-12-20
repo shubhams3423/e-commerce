@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { TiHeartFullOutline } from "react-icons/ti";
 import { Link } from "react-router-dom";
+import ProductContext from "../productContext/ProductContext";
 
 const TopSection = ({ topSectionTitle, showRedHeart, showDeleteIcon }) => {
+  const { setCartProducts, setProductCount } = useContext(ProductContext);
+  let { setTotalCartAmt } = useContext(ProductContext);
+  const removeAllProductsHandler = () => {
+    setCartProducts([]);
+    setProductCount(0);
+    setTotalCartAmt(0);
+  };
   return (
     <div className="mx-4 mt-5 flex items-center justify-between">
       <div>
@@ -32,7 +40,10 @@ const TopSection = ({ topSectionTitle, showRedHeart, showDeleteIcon }) => {
         )}
         {showDeleteIcon && (
           <div className=" ">
-            <MdDelete className="cursor-pointer text-2xl text-gray-600" />
+            <MdDelete
+              className="cursor-pointer text-2xl text-gray-600"
+              onClick={removeAllProductsHandler}
+            />
           </div>
         )}
       </div>

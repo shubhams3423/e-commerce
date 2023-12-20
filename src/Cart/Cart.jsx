@@ -12,6 +12,7 @@ const Cart = () => {
     setCartProducts,
     productBgColors,
     productBorderColors,
+    setProductCount,
   } = useContext(ProductContext);
   let { totalCartAmt, setTotalCartAmt } = useContext(ProductContext);
 
@@ -23,29 +24,35 @@ const Cart = () => {
           return product;
         }
         return product;
-      })
+      }),
     );
     setTotalCartAmt(
       (totalCartAmt += +cartProducts.find((product) => product.id === productId)
-        .newPrice)
+        .newPrice),
     );
   };
   const handlerDecreaseProductQty = (productId) => {
     setCartProducts(
-      cartProducts.map((product, key) => {
-        if (product.id === productId) {
-          product.qty > 1 &&
+      cartProducts
+        .map((product, key) => {
+          if (product.id === productId) {
             setTotalCartAmt(
               (totalCartAmt -= +cartProducts.find(
-                (product) => product.id === productId
-              ).newPrice)
+                (product) => product.id === productId,
+              ).newPrice),
             );
-          product.qty > 1 && (product.qty -= 1);
-
+            product.qty -= 1;
+            if (product.qty === 0) {
+              product.qty = 1;
+              setProductCount(cartProducts.length - 1);
+              return false;
+            } else {
+              return product;
+            }
+          }
           return product;
-        }
-        return product;
-      })
+        })
+        .filter((product, key) => product !== false),
     );
   };
   const handlerProductBgColors = (key) => {
