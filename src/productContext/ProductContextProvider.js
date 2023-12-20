@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProductContext from "./ProductContext";
-import { productObj } from "../file";
+import { productObj } from "../ShoesObjects";
 
 const ProductContextProvider = ({ children }) => {
   const [products, setProducts] = useState(productObj);
@@ -9,8 +9,15 @@ const ProductContextProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
   const [productIds, setProductIds] = useState([]);
   let [totalCartAmt, setTotalCartAmt] = useState(0);
-  const [productCount, SetProductCount] = useState(0);
+  const [productCount, setProductCount] = useState(0);
   const [likedProducts, setLikedProducts] = useState([]);
+  const productBgColors = ["bg-red-400", "bg-blue-400", "bg-yellow-400"];
+  const productBorderColors = [
+    "border-red-400",
+    "border-blue-400",
+    "border-yellow-400",
+  ];
+
   return (
     <div>
       <ProductContext.Provider
@@ -28,9 +35,11 @@ const ProductContextProvider = ({ children }) => {
           totalCartAmt,
           setTotalCartAmt,
           productCount,
-          SetProductCount,
+          setProductCount,
           likedProducts,
           setLikedProducts,
+          productBgColors,
+          productBorderColors,
         }}
       >
         {children}

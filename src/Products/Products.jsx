@@ -1,81 +1,38 @@
 import React, { useContext } from "react";
-import { BsFillBagHeartFill } from "react-icons/bs";
 import "./Products.css";
 import ProductContext from "../productContext/ProductContext";
-import { ToastContainer } from "react-toastify";
+import ProductsRender from "../ProductsRender/ProductsRender";
+import ProductNotFound from "../ProductNoFound/ProductNotFound";
 const Products = () => {
-  const {
-    products,
-    cartProduct,
-    setCartProduct,
-    productIds,
-    setProductIds,
-    SetProductCount,
-    productCount,
-    totalAmt,
-    setTotalAmt,
-  } = useContext(ProductContext);
-  let { discountedAmt, setDiscountedAmt } = useContext(ProductContext);
-
-  const handlerAddProductToCart = (id) => {
-    setCartProduct([
-      ...cartProduct,
-      products.filter((product, key) => {
-        if (product.id === id && !productIds.includes(product.id)) {
-          setProductIds([...productIds, product.id]);
-          SetProductCount(productCount + 1);
-          setDiscountedAmt(
-            (discountedAmt += +product.prevPrice - +product.newPrice)
-          );
-          setTotalAmt(totalAmt + Number(product.newPrice));
-          return true;
+  const { products, setLikedProducts, setProducts } =
+    useContext(ProductContext);
+  const handlerAddProductToLikedProducts = (id) => {
+    setProducts([
+      ...products,
+      products.map((product, key) => {
+        if (product.id === id) {
+          product.likedProduct = product.likedProduct === false ? true : false;
         }
-        return false;
       }),
     ]);
+    setLikedProducts(
+      products.filter((product, key) =>
+        product.likedProduct === true ? product : null,
+      ),
+    );
   };
   return (
-    <div className="mx-2 mt-4 grid gap-8  pb-20 productContainer">
-      {products.length === 0
-        ? "Not available"
-        : products.map((product, key) => {
-            return (
-              <div className="flex flex-col product p-3 justify-evenly rounded-lg">
-                <div className="mb-4">
-                  <img src={product.img} alt="" className="w-full h-full" />
-                </div>
-                <div className="flex flex-col gap-y-1">
-                  <h1 className="text-lg font-medium">{product.title}</h1>
-                  <div className="">
-                    <div className="flex items-center justify-between">
-                      <div className="flex text-yellow-500">
-                        <span>{product.star}</span>
-                        <span>{product.star}</span>
-                        <span>{product.star}</span>
-                        <span>{product.star}</span>
-                        <span>{product.star}</span>
-                      </div>
-                      <p className="">{product.reviews}</p>
-                    </div>
-                    <div>
-                      <p className="">{product.category}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <p className="mr-3 line-through">{product.prevPrice}$</p>
-                      <p>{product.newPrice}$</p>
-                    </div>
-                    <BsFillBagHeartFill
-                      className="text-black-400 cursor-pointer text-gray-600"
-                      onClick={() => handlerAddProductToCart(product.id)}
-                    />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-      <ToastContainer />
+    <div>
+      {products.length === 0 ? (
+        <ProductNotFound />
+      ) : (
+        <ProductsRender
+          products={products}
+          productHandlerFunction={handlerAddProductToLikedProducts}
+          showLikedProducts={true}
+          showRatings={true}
+        />
+      )}
     </div>
   );
 };

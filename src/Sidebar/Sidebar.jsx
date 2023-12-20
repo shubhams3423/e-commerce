@@ -3,7 +3,6 @@ import "./Sidebar.css";
 import ProductContext from "../productContext/ProductContext";
 import { productObj } from "../file";
 const Sidebar = () => {
-  //const [colorObj, setColorObj] = useState([]);
   const { checkItems, setProducts, setCompanyProductList } =
     useContext(ProductContext);
   const handleCategoryOnchange = (e) => {
@@ -18,8 +17,8 @@ const Sidebar = () => {
               : checkItems[0].toLowerCase()) &&
           (checkItems[1] === "All"
             ? product.category.toLowerCase()
-            : product.color === checkItems[1])
-      )
+            : product.color === checkItems[1]),
+      ),
     );
     setCompanyProductList(
       productObj.filter(
@@ -30,11 +29,10 @@ const Sidebar = () => {
               : checkItems[0].toLowerCase()) &&
           (checkItems[1] === "All"
             ? product.category.toLowerCase()
-            : product.color === checkItems[1])
-      )
+            : product.color === checkItems[1]),
+      ),
     );
   };
-  //const handlerOnclickPrice = (e) => {};
 
   const handlerOnclickColorProduct = (e) => {
     checkItems.splice(1);
@@ -48,8 +46,8 @@ const Sidebar = () => {
               : checkItems[0].toLowerCase()) &&
           (checkItems[1] === "All"
             ? product.category.toLowerCase()
-            : product.color === checkItems[1])
-      )
+            : product.color === checkItems[1]),
+      ),
     );
     setCompanyProductList(
       productObj.filter(
@@ -60,12 +58,12 @@ const Sidebar = () => {
               : checkItems[0].toLowerCase()) &&
           (checkItems[1] === "All"
             ? product.category.toLowerCase()
-            : product.color === checkItems[1])
-      )
+            : product.color === checkItems[1]),
+      ),
     );
   };
   return (
-    <div className=" flex flex-col gap-y-7  sidebar w-32 ">
+    <div className=" sidebar flex w-32  flex-col gap-y-7 ">
       <div className="">
         <h1>Category</h1>
         <div className="flex flex-col ">

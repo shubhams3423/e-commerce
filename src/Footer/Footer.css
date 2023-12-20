@@ -1,0 +1,16 @@
+.bottomLeftMenu {
+  border-top-right-radius: 15px;
+  box-shadow: -12px 1px 11px gray;
+}
+
+.bottomRightMenu {
+  border-top-left-radius: 15px;
+  box-shadow: 21px 1px 5px gray;
+}
+
+.cartIcon {
+  background: linear-gradient(transparent, transparent, #d7d6d6);
+}
+.active .footerIcon {
+  color: #3730a3;
+}

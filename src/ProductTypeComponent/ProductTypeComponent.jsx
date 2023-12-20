@@ -1,26 +1,20 @@
-import React, { useContext } from "react";
-import ProductContext from "../productContext/ProductContext";
-import { productObj } from "../file";
+import React from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
-const TopMenu = () => {
-  const { setProducts, companyProductList } = useContext(ProductContext);
-  const handleProductTypes = (e) => {};
-
+const ProductTypeComponent = () => {
   return (
     <div>
       <div className="mb-6">
-        <div className="flex justify-between items-center mb-4">
+        <div className="mb-4 flex items-center justify-between">
           <h1 className="pl-2  text-xl font-bold">Our Products</h1>
           <div className="flex items-center">
-            <p className="text-sm text-gray-600 me-1">Sort by</p>
+            <p className="me-1 text-sm text-gray-600">Sort by</p>
             <MdKeyboardArrowDown className="me-2 text-lg text-gray-600" />
           </div>
         </div>
         <div className="flex gap-x-4 pl-2">
           <button
-            className="rounded-xl bg-white px-3 py-2 text-sm flex items-center"
+            className="flex items-center rounded-xl bg-white px-3 py-2 text-sm"
             value="Sneakers"
-            onClick={handleProductTypes}
           >
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6c3Q46vk7w2G4_fYcT_U_zmNoYMMb-meR5g&usqp=CAU"
@@ -30,9 +24,8 @@ const TopMenu = () => {
             <span className="font-medium">Sneakers</span>
           </button>
           <button
-            className="rounded-xl bg-white px-3 py-1 text-sm flex items-center"
+            className="flex items-center rounded-xl bg-white px-3 py-1 text-sm"
             value="Watch"
-            onClick={handleProductTypes}
           >
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxNaoYPsICJOR7dO-f0q9iSfAWaF2c88OhvQ&usqp=CAU"
@@ -42,9 +35,8 @@ const TopMenu = () => {
             <span className="font-medium">Watch</span>
           </button>
           <button
-            className="rounded-xl  bg-white px-3 py-1 text-sm flex items-center"
+            className="flex  items-center rounded-xl bg-white px-3 py-1 text-sm"
             value="BagPack"
-            onClick={handleProductTypes}
           >
             <img
               src="https://www.fgear.in/cdn/shop/files/Untitled-1_2_copy_081f1e36-f118-4f1d-9063-985b9db4d291.jpg?v=1689761283"
@@ -59,4 +51,4 @@ const TopMenu = () => {
   );
 };
 
-export default TopMenu;
+export default ProductTypeComponent;
